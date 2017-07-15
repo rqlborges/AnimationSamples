@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9oY-sw-aNN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My View Controller-->
+        <scene sceneID="sdA-3e-lBg">
+            <objects>
+                <viewController id="9oY-sw-aNN" customClass="MyViewController" customModule="AnimationSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wBg-DZ-y16"/>
+                        <viewControllerLayoutGuide type="bottom" id="2n3-Gh-Ona"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cLK-aZ-nTv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lM-Z1-lFt">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="4OA-fd-9hR"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAO-Sv-WaH">
+                                <rect key="frame" x="167.5" y="401" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QPL-6n-BDt"/>
+                                    <constraint firstAttribute="width" constant="40" id="nSh-1P-Qi2"/>
+                                </constraints>
+                                <state key="normal" image="play-button"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="9oY-sw-aNN" eventType="touchUpInside" id="nIo-jC-BUu"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVZ-0O-zq5">
+                                <rect key="frame" x="137" y="180" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.41731321809999999" green="0.47594439979999997" blue="0.60879433159999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="SJP-fp-f8o"/>
+                                    <constraint firstAttribute="height" constant="100" id="lH7-Ia-g9O"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QAO-Sv-WaH" firstAttribute="centerX" secondItem="cLK-aZ-nTv" secondAttribute="centerX" id="0hc-oI-3CX"/>
+                            <constraint firstItem="pVZ-0O-zq5" firstAttribute="top" secondItem="wBg-DZ-y16" secondAttribute="bottom" constant="160" id="BaE-vE-dFs"/>
+                            <constraint firstAttribute="trailing" secondItem="5lM-Z1-lFt" secondAttribute="trailing" id="G9u-JR-L3h"/>
+                            <constraint firstItem="2n3-Gh-Ona" firstAttribute="top" secondItem="5lM-Z1-lFt" secondAttribute="bottom" id="Pmf-kz-onh"/>
+                            <constraint firstItem="5lM-Z1-lFt" firstAttribute="top" secondItem="QAO-Sv-WaH" secondAttribute="bottom" constant="10" id="YGj-t8-UtZ"/>
+                            <constraint firstItem="5lM-Z1-lFt" firstAttribute="leading" secondItem="cLK-aZ-nTv" secondAttribute="leading" id="i0Z-V5-up8"/>
+                            <constraint firstItem="pVZ-0O-zq5" firstAttribute="centerX" secondItem="cLK-aZ-nTv" secondAttribute="centerX" id="vZf-nZ-JEg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animatedView" destination="pVZ-0O-zq5" id="8jl-Zx-4Rt"/>
+                        <outlet property="startButton" destination="QAO-Sv-WaH" id="0vf-m4-Eoy"/>
+                        <outlet property="typePicker" destination="5lM-Z1-lFt" id="jBx-qN-KiY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iTR-A7-iUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="-191"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play-button" width="218" height="218"/>
+    </resources>
+</document>
