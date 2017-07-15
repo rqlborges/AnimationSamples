@@ -20,12 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lM-Z1-lFt">
-                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="4OA-fd-9hR"/>
-                                </constraints>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAO-Sv-WaH">
                                 <rect key="frame" x="167.5" y="401" width="40" height="40"/>
                                 <constraints>
@@ -37,24 +31,39 @@
                                     <action selector="startButtonPressed:" destination="9oY-sw-aNN" eventType="touchUpInside" id="nIo-jC-BUu"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVZ-0O-zq5">
-                                <rect key="frame" x="137" y="180" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.41731321809999999" green="0.47594439979999997" blue="0.60879433159999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucH-6M-9RP" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="401"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVZ-0O-zq5">
+                                        <rect key="frame" x="137" y="150" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.41731321809999999" green="0.47594439979999997" blue="0.60879433159999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="DPy-Ua-Mlm"/>
+                                            <constraint firstAttribute="height" constant="100" id="hjo-hf-bmP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="SJP-fp-f8o"/>
-                                    <constraint firstAttribute="height" constant="100" id="lH7-Ia-g9O"/>
+                                    <constraint firstItem="pVZ-0O-zq5" firstAttribute="centerX" secondItem="ucH-6M-9RP" secondAttribute="centerX" id="97n-tx-18Z"/>
+                                    <constraint firstItem="pVZ-0O-zq5" firstAttribute="centerY" secondItem="ucH-6M-9RP" secondAttribute="centerY" id="uKD-He-S2B"/>
                                 </constraints>
                             </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lM-Z1-lFt">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QAO-Sv-WaH" firstAttribute="centerX" secondItem="cLK-aZ-nTv" secondAttribute="centerX" id="0hc-oI-3CX"/>
-                            <constraint firstItem="pVZ-0O-zq5" firstAttribute="top" secondItem="wBg-DZ-y16" secondAttribute="bottom" constant="160" id="BaE-vE-dFs"/>
-                            <constraint firstAttribute="trailing" secondItem="5lM-Z1-lFt" secondAttribute="trailing" id="G9u-JR-L3h"/>
-                            <constraint firstItem="2n3-Gh-Ona" firstAttribute="top" secondItem="5lM-Z1-lFt" secondAttribute="bottom" id="Pmf-kz-onh"/>
-                            <constraint firstItem="5lM-Z1-lFt" firstAttribute="top" secondItem="QAO-Sv-WaH" secondAttribute="bottom" constant="10" id="YGj-t8-UtZ"/>
-                            <constraint firstItem="5lM-Z1-lFt" firstAttribute="leading" secondItem="cLK-aZ-nTv" secondAttribute="leading" id="i0Z-V5-up8"/>
-                            <constraint firstItem="pVZ-0O-zq5" firstAttribute="centerX" secondItem="cLK-aZ-nTv" secondAttribute="centerX" id="vZf-nZ-JEg"/>
+                            <constraint firstItem="5lM-Z1-lFt" firstAttribute="top" secondItem="QAO-Sv-WaH" secondAttribute="bottom" constant="10" id="14g-0A-oVe"/>
+                            <constraint firstAttribute="trailing" secondItem="5lM-Z1-lFt" secondAttribute="trailing" id="4wo-h7-iIc"/>
+                            <constraint firstItem="ucH-6M-9RP" firstAttribute="leading" secondItem="cLK-aZ-nTv" secondAttribute="leading" id="9Wx-Lu-Dbv"/>
+                            <constraint firstItem="5lM-Z1-lFt" firstAttribute="leading" secondItem="cLK-aZ-nTv" secondAttribute="leading" id="M3T-mt-W1B"/>
+                            <constraint firstItem="ucH-6M-9RP" firstAttribute="top" secondItem="wBg-DZ-y16" secondAttribute="bottom" constant="-20" id="PDr-PJ-s4C"/>
+                            <constraint firstItem="2n3-Gh-Ona" firstAttribute="top" secondItem="5lM-Z1-lFt" secondAttribute="bottom" id="cSO-hb-eWW"/>
+                            <constraint firstItem="QAO-Sv-WaH" firstAttribute="top" secondItem="ucH-6M-9RP" secondAttribute="bottom" id="glu-PJ-xIa"/>
+                            <constraint firstAttribute="trailing" secondItem="ucH-6M-9RP" secondAttribute="trailing" id="lin-c0-ubU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -65,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTR-A7-iUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-191"/>
+            <point key="canvasLocation" x="100" y="-191.1544227886057"/>
         </scene>
     </scenes>
     <resources>
