@@ -21,22 +21,12 @@ private enum AnimationExampleType: String {
     case slideOutToBottom = "slideOut(to: .bottom)"
     case slideOutToLeft = "slideOut(to: .left)"
     case slideOutToRight = "slideOut(to: .right)"
-    //    case bounceInFromTop = "bounceIn(from: .top)"
-    //    case bounceInFromBottom = "bounceIn(from: .bottom)"
-    //    case bounceInFromLeft = "bounceIn(from: .left)"
-    //    case bounceInFromRight = "bounceIn(from: .right)"
-    //    case bounceOutToTop = "bounceOut(to: .top)"
-    //    case bounceOutToBottom = "bounceOut(to: .bottom)"
-    //    case bounceOutToLeft = "bounceOut(to: .left)"
-    //    case bounceOutToRight = "bounceOut(to: .right)"
-        case shake = "shake()"
-        case shakeHorizontal = "shake(direction: .horizontal)"
-        case shakeVertical = "shake(direction: .vertical)"
-    //    case hop = "hop()"
-    //    case hopTowardTop = "hop(toward: .top)"
-    //    case hopTowardBottom = "hop(toward: .bottom)"
-    //    case hopTowardLeft = "hop(toward: .left)"
-    //    case hopTowardRight = "hop(toward: .right)"
+    case shake = "shake()"
+    case shakeHorizontal = "shake(direction: .horizontal)"
+    case shakeVertical = "shake(direction: .vertical)"
+    case move = "move(to:)"
+    case rotate = "rotate(rotationAngle:)"
+    case moveAndRotate = "move(to:).rotate(rotationAngle:)"
 }
 
 private let AllExamples: [AnimationExampleType] = [
@@ -52,28 +42,21 @@ private let AllExamples: [AnimationExampleType] = [
     .slideOutToBottom,
     .slideOutToLeft,
     .slideOutToRight,
-    //    .bounceInFromTop,
-    //    .bounceInFromBottom,
-    //    .bounceInFromLeft,
-    //    .bounceInFromRight,
-    //    .bounceOutToTop,
-    //    .bounceOutToBottom,
-    //    .bounceOutToLeft,
-    //    .bounceOutToRight,
     .shake,
     .shakeHorizontal,
     .shakeVertical,
-    //    .hop,
-    //    .hopTowardTop,
-    //    .hopTowardBottom,
-    //    .hopTowardLeft,
-    //    .hopTowardRight,
+    .move,
+    .rotate,
+    .moveAndRotate
 ]
 
 class MyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var animatedView: UIView!
     @IBOutlet weak var typePicker: UIPickerView!
     @IBOutlet weak var startButton: UIButton!
+    
+    let origin = CGPoint(x: 137, y: 150)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,47 +114,22 @@ class MyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             animatedView.slideOut(to: .left, x: 100)
         case .slideOutToRight:
             animatedView.slideOut(to: .right, x: 100)
-            //        case .bounceInFromTop:
-            //            animatedView.bounceIn(from: .top)
-            //        case .bounceInFromBottom:
-            //            animatedView.bounceIn(from: .bottom)
-            //        case .bounceInFromLeft:
-            //            animatedView.bounceIn(from: .left)
-            //        case .bounceInFromRight:
-            //            animatedView.bounceIn(from: .right)
-            //        case .bounceOutToTop:
-            //            animatedView.alpha = 1
-            //            animatedView.bounceOut(to: .top)
-            //        case .bounceOutToBottom:
-            //            animatedView.alpha = 1
-            //            animatedView.bounceOut(to: .bottom)
-            //        case .bounceOutToLeft:
-            //            animatedView.bounceOut(to: .left)
-            //            animatedView.alpha = 1
-            //        case .bounceOutToRight:
-            //            animatedView.alpha = 1
-            //            animatedView.bounceOut(to: .right)
-            case .shake:
-                animatedView.shake()
-            case .shakeHorizontal:
-                animatedView.shake(direction: .horizonal)
-            case .shakeVertical:
-                animatedView.shake(direction: .vertical)
-            //        case .hop:
-            //            animatedView.alpha = 1
-            //            animatedView.hop()
-            //        case .hopTowardTop:
-            //            animatedView.alpha = 1
-            //            animatedView.hop(toward: .top)
-            //        case .hopTowardBottom:
-            //            animatedView.alpha = 1
-            //            animatedView.hop(toward: .bottom)
-            //        case .hopTowardLeft:
-            //            animatedView.alpha = 1
-            //            animatedView.hop(toward: .left)
-            //        case .hopTowardRight:
-            //            animatedView.alpha = 1
-            //            animatedView.hop(toward: .right)
+        case .shake:
+            animatedView.shake()
+        case .shakeHorizontal:
+            animatedView.shake(direction: .horizonal)
+        case .shakeVertical:
+            animatedView.shake(direction: .vertical)
+        case .move:
+            animatedView.move(to:CGPoint(x: 0, y: origin.y), completion: { (success) in
+                self.animatedView.move(to: self.origin, duration: 0, delay: 2)
+            })
+        case .rotate:
+            animatedView.rotate()
+        case .moveAndRotate:
+            animatedView.move(to:CGPoint(x: 0, y: origin.y)).rotate(completion: { (success) in
+                self.animatedView.move(to: self.origin, duration: 0, delay: 2)
+            })
         }
     }
 }

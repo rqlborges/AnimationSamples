@@ -158,13 +158,14 @@ public extension UIView {
             }, completion: completion)
             return self
         }
-        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
+        UIView.animate(
+            withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
             self.transform = endTransform
         }, completion: completion)
         return self
     }
     
-    //TODO: Shake
+    //TODO: - Finish Shake
     @discardableResult func shake (direction:Direction = .horizonal) -> UIView {
         let animation = CAKeyframeAnimation()
         animation.keyPath = (direction == .horizonal ? "position.x" : "position.y")
@@ -178,10 +179,41 @@ public extension UIView {
     }
     
     
-    //TODO: Move(from:to:)
-    //TODO: MoveTo(to:)
+    //MARK: - Move(to:)
+    //TODO: Description
+    @discardableResult func move(to endPoint:CGPoint,
+                                 damping:CGFloat = 1.0,
+                                 velocity:CGFloat = 0,
+                                 duration: TimeInterval = 1.0,
+                                 delay: TimeInterval = 0,
+                                 options: UIViewAnimationOptions = .curveEaseOut,
+                                 completion: ((Bool) -> Void)? = nil) -> UIView {
+        UIView.animate(
+            withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
+            self.frame.origin = endPoint
+        }, completion: completion)
+        return self
+    }
+    
     //TODO: Rotate
+    @discardableResult func rotate(rotationAngle angle:CGFloat = 180,
+                                   damping:CGFloat = 1.0,
+                                   velocity:CGFloat = 0,
+                                   duration: TimeInterval = 1.0,
+                                   delay: TimeInterval = 0,
+                                   options: UIViewAnimationOptions = .curveEaseOut,
+                                   completion: ((Bool) -> Void)? = nil) -> UIView {
+        let angleInRadians = angle * .pi / 180
+        let rotation = CGAffineTransform(rotationAngle: angleInRadians)
+        UIView.animate(
+            withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
+            self.transform = rotation
+        }, completion: completion)
+        return self
+    }
+    
     //TODO: Scale
+    
     
     //TODO: - Description
     private func offsetFor(edge: ViewEdge) -> CGPoint {
