@@ -16,6 +16,7 @@
 		609940411F1A999C0044D089 /* Heitor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609940401F1A999C0044D089 /* Heitor.storyboard */; };
 		609940431F1A99A60044D089 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609940421F1A99A60044D089 /* MyViewController.swift */; };
 		609940451F1A99B40044D089 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609940441F1A99B40044D089 /* UIViewExtension.swift */; };
+		751852621F1D3F440044025F /* SideBarButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751852611F1D3F440044025F /* SideBarButtonViewController.swift */; };
 		754061251F1B38ED002A4F5E /* AnimationsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754061241F1B38ED002A4F5E /* AnimationsListTableViewController.swift */; };
 		754061271F1B39A3002A4F5E /* PulseAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754061261F1B39A3002A4F5E /* PulseAnimationViewController.swift */; };
 		754061291F1B39D2002A4F5E /* LoadingAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754061281F1B39D2002A4F5E /* LoadingAnimationViewController.swift */; };
@@ -33,6 +34,7 @@
 		609940401F1A999C0044D089 /* Heitor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Heitor.storyboard; sourceTree = "<group>"; };
 		609940421F1A99A60044D089 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		609940441F1A99B40044D089 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		751852611F1D3F440044025F /* SideBarButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarButtonViewController.swift; sourceTree = "<group>"; };
 		754061241F1B38ED002A4F5E /* AnimationsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsListTableViewController.swift; sourceTree = "<group>"; };
 		754061261F1B39A3002A4F5E /* PulseAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimationViewController.swift; sourceTree = "<group>"; };
 		754061281F1B39D2002A4F5E /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				609940401F1A999C0044D089 /* Heitor.storyboard */,
 				754061241F1B38ED002A4F5E /* AnimationsListTableViewController.swift */,
 				754061281F1B39D2002A4F5E /* LoadingAnimationViewController.swift */,
+				751852611F1D3F440044025F /* SideBarButtonViewController.swift */,
 				754061261F1B39A3002A4F5E /* PulseAnimationViewController.swift */,
 			);
 			name = "Heitor Files";
@@ -177,6 +180,7 @@
 				609940451F1A99B40044D089 /* UIViewExtension.swift in Sources */,
 				754061271F1B39A3002A4F5E /* PulseAnimationViewController.swift in Sources */,
 				609940321F1A99710044D089 /* AnimationSamples.xcdatamodeld in Sources */,
+				751852621F1D3F440044025F /* SideBarButtonViewController.swift in Sources */,
 				754061251F1B38ED002A4F5E /* AnimationsListTableViewController.swift in Sources */,
 				754061291F1B39D2002A4F5E /* LoadingAnimationViewController.swift in Sources */,
 				609940431F1A99A60044D089 /* MyViewController.swift in Sources */,

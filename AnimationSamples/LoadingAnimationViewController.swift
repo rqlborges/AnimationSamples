@@ -49,9 +49,10 @@ class LoadingAnimationViewController: UIViewController {
             //Recursão
             CATransaction.begin()
             CATransaction.setCompletionBlock({
-                //                self.circleLayer.removeAllAnimations()
-                //                self.circleLayer.removeFromSuperlayer()
-                self.circleCheck()
+                self.circleLayer.removeAllAnimations()
+                self.circleLayer.strokeEnd = 0
+//                                self.circleLayer.removeFromSuperlayer()
+//                self.circleCheck()
             })
             
             //Erase Animation
