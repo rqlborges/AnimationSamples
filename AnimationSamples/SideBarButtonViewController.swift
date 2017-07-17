@@ -12,24 +12,69 @@ class SideBarButtonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        sideBarButton()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func sideBarButton(){
+        
+        //Set positions
+        let viewCenter = view.center
+        
+        let topLinePosition = CGPoint(x: viewCenter.x, y: view.center.y - 5)
+        let topLineGoTo = CGPoint(x: viewCenter.x + 25, y: view.center.y - 5)
+        
+        let middleLinePosition = CGPoint(x: viewCenter.x, y: viewCenter.y)
+        let middleLineGoTo = CGPoint(x: viewCenter.x + 25, y: view.center.y)
+        
+        let bottonLinePosition = CGPoint(x: viewCenter.x, y: viewCenter.y + 5)
+        let bottonLineGoTo = CGPoint(x: viewCenter.x + 25, y: view.center.y + 5)
+        
+        //Set Paths
+        let topLinePath = UIBezierPath()
+        topLinePath.move(to: topLinePosition)
+        topLinePath.addLine(to: topLineGoTo)
+        
+        let middleLinePath = UIBezierPath()
+        middleLinePath.move(to: middleLinePosition)
+        middleLinePath.addLine(to: middleLineGoTo)
+        
+        let bottonLinePath = UIBezierPath()
+        bottonLinePath.move(to: bottonLinePosition)
+        bottonLinePath.addLine(to: bottonLineGoTo)
+        
+        //Set Layers
+        let topLineLayer = CAShapeLayer()
+        topLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        topLineLayer.lineWidth = 3
+        topLineLayer.path = topLinePath.cgPath
+        self.view.layer.addSublayer(topLineLayer)
+        
+        let middleLineLayer = CAShapeLayer()
+        middleLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        middleLineLayer.lineWidth = 3
+        middleLineLayer.path = middleLinePath.cgPath
+        self.view.layer.addSublayer(middleLineLayer)
+        
+        let bottonLineLayer = CAShapeLayer()
+        bottonLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        bottonLineLayer.lineWidth = 3
+        bottonLineLayer.path = bottonLinePath.cgPath
+        self.view.layer.addSublayer(bottonLineLayer)
+        
+        
+        
+        
     }
-    */
-
+    
+    @IBAction func animate(_ sender: Any) {
+    }
+    
+    @IBAction func dismiss(_ sender: Any) {
+    }
 }

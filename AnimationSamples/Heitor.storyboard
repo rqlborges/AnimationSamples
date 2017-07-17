@@ -149,6 +149,50 @@
             </objects>
             <point key="canvasLocation" x="1089" y="-200"/>
         </scene>
+        <!--Side Bar Button View Controller-->
+        <scene sceneID="iCl-5r-4uV">
+            <objects>
+                <viewController storyboardIdentifier="Screen3" id="dcr-Hm-hBz" customClass="SideBarButtonViewController" customModule="AnimationSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C0W-dt-vPt"/>
+                        <viewControllerLayoutGuide type="bottom" id="9vm-UL-iTb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="Tdd-1S-dTp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDa-w9-CtA">
+                                <rect key="frame" x="16" y="575" width="343" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Animate!"/>
+                                <connections>
+                                    <action selector="animate:" destination="dcr-Hm-hBz" eventType="touchUpInside" id="OkY-NJ-97t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NH-yc-tVu">
+                                <rect key="frame" x="16" y="611" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="dcr-Hm-hBz" eventType="touchUpInside" id="5GR-Gt-ApU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9vm-UL-iTb" firstAttribute="top" secondItem="3NH-yc-tVu" secondAttribute="bottom" constant="20" id="CyZ-Wh-xGB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yDa-w9-CtA" secondAttribute="trailing" id="XBv-yA-Zpq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3NH-yc-tVu" secondAttribute="trailing" id="nkS-Bw-OZq"/>
+                            <constraint firstItem="yDa-w9-CtA" firstAttribute="leading" secondItem="Tdd-1S-dTp" secondAttribute="leadingMargin" id="r9S-6n-pzB"/>
+                            <constraint firstItem="3NH-yc-tVu" firstAttribute="leading" secondItem="Tdd-1S-dTp" secondAttribute="leadingMargin" id="sLv-YX-3N2"/>
+                            <constraint firstItem="9vm-UL-iTb" firstAttribute="top" secondItem="yDa-w9-CtA" secondAttribute="bottom" constant="50" id="wZq-iK-rud"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oeu-XT-Mo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2738" y="-183"/>
+        </scene>
     </scenes>
     <resources>
         <image name="play-button" width="218" height="218"/>
