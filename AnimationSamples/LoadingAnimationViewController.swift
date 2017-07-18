@@ -31,8 +31,8 @@ class LoadingAnimationViewController: UIViewController {
         circlePath.addArc(withCenter: view.center , radius: 20, startAngle: 0, endAngle: .pi * 2, clockwise: true)
         
         //Circle Layer
-        circleLayer.fillColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0)
-        circleLayer.strokeColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        circleLayer.fillColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0).cgColor
+        circleLayer.strokeColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1).cgColor
         circleLayer.lineWidth = 4
         circleLayer.path = circlePath.cgPath
         circleLayer.strokeEnd = 1

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60555DD81F1E8BFC001BC6C7 /* MusicPlayerUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60555DD71F1E8BFC001BC6C7 /* MusicPlayerUIKit.swift */; };
+		60555DDC1F1E8E5A001BC6C7 /* MusicPlayerFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60555DDB1F1E8E5A001BC6C7 /* MusicPlayerFramework.swift */; };
 		6099402A1F1A99710044D089 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609940291F1A99710044D089 /* AppDelegate.swift */; };
 		6099402F1F1A99710044D089 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6099402D1F1A99710044D089 /* Main.storyboard */; };
 		609940321F1A99710044D089 /* AnimationSamples.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 609940301F1A99710044D089 /* AnimationSamples.xcdatamodeld */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60555DD71F1E8BFC001BC6C7 /* MusicPlayerUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerUIKit.swift; sourceTree = "<group>"; };
+		60555DDB1F1E8E5A001BC6C7 /* MusicPlayerFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerFramework.swift; sourceTree = "<group>"; };
 		609940261F1A99710044D089 /* AnimationSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		609940291F1A99710044D089 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6099402E1F1A99710044D089 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				6099403E1F1A99970044D089 /* Erick.storyboard */,
 				609940421F1A99A60044D089 /* MyViewController.swift */,
 				609940441F1A99B40044D089 /* UIViewExtension.swift */,
+				60555DD71F1E8BFC001BC6C7 /* MusicPlayerUIKit.swift */,
+				60555DDB1F1E8E5A001BC6C7 /* MusicPlayerFramework.swift */,
 			);
 			name = "Erick Files";
 			sourceTree = "<group>";
@@ -180,6 +186,8 @@
 				609940451F1A99B40044D089 /* UIViewExtension.swift in Sources */,
 				754061271F1B39A3002A4F5E /* PulseAnimationViewController.swift in Sources */,
 				609940321F1A99710044D089 /* AnimationSamples.xcdatamodeld in Sources */,
+				60555DDC1F1E8E5A001BC6C7 /* MusicPlayerFramework.swift in Sources */,
+				60555DD81F1E8BFC001BC6C7 /* MusicPlayerUIKit.swift in Sources */,
 				751852621F1D3F440044025F /* SideBarButtonViewController.swift in Sources */,
 				754061251F1B38ED002A4F5E /* AnimationsListTableViewController.swift in Sources */,
 				754061291F1B39D2002A4F5E /* LoadingAnimationViewController.swift in Sources */,
@@ -317,7 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7SE9929Z59;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
 				INFOPLIST_FILE = AnimationSamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.AnimationSamples;
@@ -331,7 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7SE9929Z59;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
 				INFOPLIST_FILE = AnimationSamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.AnimationSamples;

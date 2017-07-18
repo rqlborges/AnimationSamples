@@ -27,6 +27,7 @@ private enum AnimationExampleType: String {
     case move = "move(to:)"
     case rotate = "rotate(rotationAngle:)"
     case moveAndRotate = "move(to:).rotate(rotationAngle:)"
+    case scale = "scale(proportion:)"
 }
 
 private let AllExamples: [AnimationExampleType] = [
@@ -47,7 +48,8 @@ private let AllExamples: [AnimationExampleType] = [
     .shakeVertical,
     .move,
     .rotate,
-    .moveAndRotate
+    .moveAndRotate,
+    .scale
 ]
 
 class MyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -130,6 +132,8 @@ class MyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             animatedView.move(to:CGPoint(x: 0, y: origin.y)).rotate(completion: { (success) in
                 self.animatedView.move(to: self.origin, duration: 0, delay: 2)
             })
+        case .scale:
+            animatedView.scale()
         }
     }
 }

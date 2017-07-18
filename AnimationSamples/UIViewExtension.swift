@@ -23,6 +23,7 @@ public enum Direction {
     case vertical
 }
 
+//MARK: - UIView Extension
 public extension UIView {
     
     //MARK: - FadeIn
@@ -178,7 +179,6 @@ public extension UIView {
         return self
     }
     
-    
     //MARK: - Move(to:)
     //TODO: Description
     @discardableResult func move(to endPoint:CGPoint,
@@ -195,8 +195,9 @@ public extension UIView {
         return self
     }
     
-    //TODO: Rotate
-    @discardableResult func rotate(rotationAngle angle:CGFloat = 180,
+    //MARK: - Rotate
+    //TODO: Save last angle
+    @discardableResult func rotate(degrees angle:CGFloat = 180,
                                    damping:CGFloat = 1.0,
                                    velocity:CGFloat = 0,
                                    duration: TimeInterval = 1.0,
@@ -212,7 +213,23 @@ public extension UIView {
         return self
     }
     
-    //TODO: Scale
+    //MARK: - Scale
+    //TODO: Descriptionm
+    @discardableResult func scale(proportion:CGFloat = 1.3,
+                                  damping:CGFloat = 1.0,
+                                  velocity:CGFloat = 0,
+                                  duration: TimeInterval = 1.0,
+                                  delay: TimeInterval = 0,
+                                  options: UIViewAnimationOptions = .curveEaseOut,
+                                  completion: ((Bool) -> Void)? = nil) -> UIView {
+        let endScale = CGAffineTransform(scaleX: proportion, y:proportion)
+        UIView.animate(
+            withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
+            self.transform = endScale
+        }, completion: completion)
+        
+        return self
+    }
     
     
     //TODO: - Description

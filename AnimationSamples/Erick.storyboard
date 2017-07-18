@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9oY-sw-aNN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bhb-tB-Adw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -76,8 +76,212 @@
             </objects>
             <point key="canvasLocation" x="100" y="-191.1544227886057"/>
         </scene>
+        <!--Music PlayerUI Kit-->
+        <scene sceneID="zcp-Q7-4lq">
+            <objects>
+                <viewController id="Bhb-tB-Adw" customClass="MusicPlayerUIKit" customModule="AnimationSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V2U-dz-bUv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fup-sx-p55"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="glJ-Ut-YoV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AlbumImage" translatesAutoresizingMaskIntoConstraints="NO" id="cDu-AJ-6Z6">
+                                <rect key="frame" x="88" y="92" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daft Punk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEd-Gb-z6O">
+                                <rect key="frame" x="140" y="324" width="94" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.1242348626" green="0.13696503639999999" blue="0.29058253769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instant crush" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7W5-mp-12V">
+                                <rect key="frame" x="134" y="354" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.54616302250000004" green="0.62062925099999999" blue="0.77842217680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SoundWaves" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-5i-9xU">
+                                <rect key="frame" x="35" y="433" width="308" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PreviousSong" translatesAutoresizingMaskIntoConstraints="NO" id="SuC-jf-0q7">
+                                <rect key="frame" x="32" y="586" width="39" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKf-VE-GOT">
+                                <rect key="frame" x="305" y="586" width="39" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="NextSong"/>
+                                <connections>
+                                    <segue destination="fBz-GF-aqu" kind="show" id="s4x-in-EI8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaP-X7-PkR">
+                                <rect key="frame" x="170" y="518" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Heart Off"/>
+                                <state key="selected" image="Heart On"/>
+                                <connections>
+                                    <action selector="heartTap:" destination="Bhb-tB-Adw" eventType="touchUpInside" id="vgY-eo-VoL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hU-8o-5W9">
+                                <rect key="frame" x="234" y="582" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Repeat Off"/>
+                                <state key="selected" image="Repeat On"/>
+                                <connections>
+                                    <action selector="repeatTap:" destination="Bhb-tB-Adw" eventType="touchUpInside" id="rNa-xA-gn2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiD-Yo-Qnf">
+                                <rect key="frame" x="106" y="582" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Shuffle Off"/>
+                                <state key="selected" image="Shuffle On"/>
+                                <connections>
+                                    <action selector="shuffleTap:" destination="Bhb-tB-Adw" eventType="touchUpInside" id="ic3-me-z8d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx3-YW-cDC">
+                                <rect key="frame" x="163" y="574" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="More Off"/>
+                                <state key="selected" image="More On"/>
+                                <connections>
+                                    <action selector="moreTap:" destination="Bhb-tB-Adw" eventType="touchUpInside" id="cxM-wq-E3S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="heartButtonOutlet" destination="iaP-X7-PkR" id="xET-JI-Eln"/>
+                        <outlet property="moreButtonOutlet" destination="Bx3-YW-cDC" id="QhQ-3t-zKd"/>
+                        <outlet property="repeatButtonOutlet" destination="4hU-8o-5W9" id="Meh-By-qMU"/>
+                        <outlet property="shuffleButtonOutlet" destination="RiD-Yo-Qnf" id="eoH-Or-M7T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJR-br-cGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="-191"/>
+        </scene>
+        <!--Music Player Framework-->
+        <scene sceneID="H9E-Wx-5H1">
+            <objects>
+                <viewController id="fBz-GF-aqu" customClass="MusicPlayerFramework" customModule="AnimationSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wyR-9G-M8A"/>
+                        <viewControllerLayoutGuide type="bottom" id="lAD-Ov-Ws1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QwP-wC-8ge">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AlbumImage" translatesAutoresizingMaskIntoConstraints="NO" id="dak-bg-be3">
+                                <rect key="frame" x="88" y="92" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daft Punk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfA-6i-QM2">
+                                <rect key="frame" x="140" y="324" width="94" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.1242348626" green="0.13696503639999999" blue="0.29058253769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instant crush" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX6-n4-9Jw">
+                                <rect key="frame" x="134" y="354" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.54616302250000004" green="0.62062925099999999" blue="0.77842217680000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SoundWaves" translatesAutoresizingMaskIntoConstraints="NO" id="gxN-iX-x7w">
+                                <rect key="frame" x="35" y="433" width="308" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NextSong" translatesAutoresizingMaskIntoConstraints="NO" id="ftu-EG-aAd">
+                                <rect key="frame" x="305" y="586" width="39" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myo-6G-b2L">
+                                <rect key="frame" x="170" y="518" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Heart Off"/>
+                                <state key="selected" image="Heart On"/>
+                                <connections>
+                                    <action selector="heartTap:" destination="fBz-GF-aqu" eventType="touchUpInside" id="ikx-CR-fbg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mod-RC-VLJ">
+                                <rect key="frame" x="234" y="582" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Repeat Off"/>
+                                <state key="selected" image="Repeat On"/>
+                                <connections>
+                                    <action selector="repeatTap:" destination="fBz-GF-aqu" eventType="touchUpInside" id="k89-tC-HwC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gF1-nw-48O">
+                                <rect key="frame" x="106" y="582" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Shuffle Off"/>
+                                <state key="selected" image="Shuffle On"/>
+                                <connections>
+                                    <action selector="shuffleTap:" destination="fBz-GF-aqu" eventType="touchUpInside" id="pST-Il-EDD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-mt-wQv">
+                                <rect key="frame" x="163" y="574" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="More Off"/>
+                                <state key="selected" image="More On"/>
+                                <connections>
+                                    <action selector="moreTap:" destination="fBz-GF-aqu" eventType="touchUpInside" id="XUA-de-GR8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enL-Uy-xGd">
+                                <rect key="frame" x="32" y="586" width="39" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="PreviousSong"/>
+                                <connections>
+                                    <action selector="previousTap:" destination="fBz-GF-aqu" eventType="touchUpInside" id="agF-rd-MT6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="heartButtonOutlet" destination="myo-6G-b2L" id="qus-QS-fwa"/>
+                        <outlet property="moreButtonOutlet" destination="Yga-mt-wQv" id="Jdb-sY-Kjy"/>
+                        <outlet property="repeatButtonOutlet" destination="Mod-RC-VLJ" id="c4N-O0-Oce"/>
+                        <outlet property="shuffleButtonOutlet" destination="gF1-nw-48O" id="Qde-zg-C5k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHs-Ud-qPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="-191"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="AlbumImage" width="1000" height="1000"/>
+        <image name="Heart Off" width="185" height="185"/>
+        <image name="Heart On" width="185" height="185"/>
+        <image name="More Off" width="260" height="260"/>
+        <image name="More On" width="260" height="260"/>
+        <image name="NextSong" width="175" height="105"/>
+        <image name="PreviousSong" width="175" height="105"/>
+        <image name="Repeat Off" width="185" height="185"/>
+        <image name="Repeat On" width="185" height="185"/>
+        <image name="Shuffle Off" width="185" height="185"/>
+        <image name="Shuffle On" width="185" height="185"/>
+        <image name="SoundWaves" width="1540" height="180"/>
         <image name="play-button" width="218" height="218"/>
     </resources>
 </document>

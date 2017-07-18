@@ -50,19 +50,19 @@ class SideBarButtonViewController: UIViewController {
         
         //Set Layers
         let topLineLayer = CAShapeLayer()
-        topLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        topLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
         topLineLayer.lineWidth = 3
         topLineLayer.path = topLinePath.cgPath
         self.view.layer.addSublayer(topLineLayer)
         
         let middleLineLayer = CAShapeLayer()
-        middleLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        middleLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
         middleLineLayer.lineWidth = 3
         middleLineLayer.path = middleLinePath.cgPath
         self.view.layer.addSublayer(middleLineLayer)
         
         let bottonLineLayer = CAShapeLayer()
-        bottonLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        bottonLineLayer.strokeColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
         bottonLineLayer.lineWidth = 3
         bottonLineLayer.path = bottonLinePath.cgPath
         self.view.layer.addSublayer(bottonLineLayer)
