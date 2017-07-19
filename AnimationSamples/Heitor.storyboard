@@ -166,7 +166,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Animate!"/>
                                 <connections>
-                                    <action selector="animate:" destination="dcr-Hm-hBz" eventType="touchUpInside" id="OkY-NJ-97t"/>
+                                    <action selector="animate:" destination="dcr-Hm-hBz" eventType="touchUpInside" id="eJY-Ud-Mfs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NH-yc-tVu">
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oeu-XT-Mo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2738" y="-183"/>
+            <point key="canvasLocation" x="2734" y="-200"/>
         </scene>
     </scenes>
     <resources>
