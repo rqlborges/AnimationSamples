@@ -231,6 +231,19 @@ public extension UIView {
         return self
     }
     
+    //TODO: - Follow(path:)
+    @discardableResult func follow(//path: UIBezierPath ,
+                                   duration: TimeInterval = 1) -> UIView {
+        let path = UIBezierPath()
+        path.addArc(withCenter: CGPoint(x: 187, y: 100 ), radius: 50, startAngle: (3 * .pi) / 2, endAngle: -.pi / 2, clockwise: true)
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position"
+        animation.path = path.cgPath
+        animation.calculationMode = kCAAnimationLinear
+        animation.duration = duration
+        layer.add(animation, forKey: "follow")
+        return self
+    }
     
     //TODO: - Description
     private func offsetFor(edge: ViewEdge) -> CGPoint {

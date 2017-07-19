@@ -28,6 +28,7 @@ private enum AnimationExampleType: String {
     case rotate = "rotate(rotationAngle:)"
     case moveAndRotate = "move(to:).rotate(rotationAngle:)"
     case scale = "scale(proportion:)"
+    case follow = "follow(path:)"
 }
 
 private let AllExamples: [AnimationExampleType] = [
@@ -49,7 +50,8 @@ private let AllExamples: [AnimationExampleType] = [
     .move,
     .rotate,
     .moveAndRotate,
-    .scale
+    .scale,
+    .follow
 ]
 
 class MyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -134,6 +136,8 @@ class MyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             })
         case .scale:
             animatedView.scale()
+        case .follow:
+            animatedView.follow()
         }
     }
 }
