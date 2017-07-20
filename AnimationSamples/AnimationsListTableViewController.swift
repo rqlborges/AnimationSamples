@@ -18,6 +18,7 @@ class AnimationsListTableViewController: UITableViewController {
         screens.append("CircleCheck")
         screens.append("PulsePlayButton")
         screens.append("SidebarButton")
+        screens.append("FourBalls")
         
     }
     

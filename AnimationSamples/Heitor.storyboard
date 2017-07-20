@@ -210,7 +210,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Animate!"/>
                                 <connections>
-                                    <action selector="animate:" destination="LhY-fo-O4a" eventType="touchUpInside" id="BRG-V4-IQi"/>
+                                    <action selector="fourBallAnimation:" destination="LhY-fo-O4a" eventType="touchUpInside" id="qtf-FO-eO9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhc-IS-20u">
@@ -218,7 +218,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Exit"/>
                                 <connections>
-                                    <action selector="dismiss:" destination="LhY-fo-O4a" eventType="touchUpInside" id="DTt-ws-jNu"/>
+                                    <action selector="dismiss:" destination="LhY-fo-O4a" eventType="touchUpInside" id="Xmc-VX-Cpc"/>
                                 </connections>
                             </button>
                         </subviews>
