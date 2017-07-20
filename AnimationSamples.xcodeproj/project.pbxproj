@@ -22,6 +22,7 @@
 		754061251F1B38ED002A4F5E /* AnimationsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754061241F1B38ED002A4F5E /* AnimationsListTableViewController.swift */; };
 		754061271F1B39A3002A4F5E /* PulseAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754061261F1B39A3002A4F5E /* PulseAnimationViewController.swift */; };
 		754061291F1B39D2002A4F5E /* LoadingAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754061281F1B39D2002A4F5E /* LoadingAnimationViewController.swift */; };
+		756EC9671F20416B004154F8 /* FourBallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756EC9661F20416B004154F8 /* FourBallsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		754061241F1B38ED002A4F5E /* AnimationsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsListTableViewController.swift; sourceTree = "<group>"; };
 		754061261F1B39A3002A4F5E /* PulseAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimationViewController.swift; sourceTree = "<group>"; };
 		754061281F1B39D2002A4F5E /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationViewController.swift; sourceTree = "<group>"; };
+		756EC9661F20416B004154F8 /* FourBallsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourBallsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,9 @@
 				609940401F1A999C0044D089 /* Heitor.storyboard */,
 				754061241F1B38ED002A4F5E /* AnimationsListTableViewController.swift */,
 				754061281F1B39D2002A4F5E /* LoadingAnimationViewController.swift */,
-				751852611F1D3F440044025F /* SideBarButtonViewController.swift */,
 				754061261F1B39A3002A4F5E /* PulseAnimationViewController.swift */,
+				751852611F1D3F440044025F /* SideBarButtonViewController.swift */,
+				756EC9661F20416B004154F8 /* FourBallsViewController.swift */,
 			);
 			name = "Heitor Files";
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				754061271F1B39A3002A4F5E /* PulseAnimationViewController.swift in Sources */,
 				609940321F1A99710044D089 /* AnimationSamples.xcdatamodeld in Sources */,
 				60555DDC1F1E8E5A001BC6C7 /* MusicPlayerFramework.swift in Sources */,
+				756EC9671F20416B004154F8 /* FourBallsViewController.swift in Sources */,
 				60555DD81F1E8BFC001BC6C7 /* MusicPlayerUIKit.swift in Sources */,
 				751852621F1D3F440044025F /* SideBarButtonViewController.swift in Sources */,
 				754061251F1B38ED002A4F5E /* AnimationsListTableViewController.swift in Sources */,

@@ -57,8 +57,6 @@ class SideBarButtonViewController: UIViewController {
         bottonLineView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.view.addSubview(bottonLineView)
 
-        
-        
     }
     
     
