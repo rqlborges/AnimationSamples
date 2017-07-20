@@ -232,16 +232,17 @@ public extension UIView {
     }
     
     //TODO: - Follow(path:)
-    @discardableResult func follow(//path: UIBezierPath ,
-                                   duration: TimeInterval = 1) -> UIView {
-        let path = UIBezierPath()
-        path.addArc(withCenter: CGPoint(x: 187, y: 100 ), radius: 50, startAngle: (3 * .pi) / 2, endAngle: -.pi / 2, clockwise: true)
-        let animation = CAKeyframeAnimation()
-        animation.keyPath = "position"
+    @discardableResult func follow(path: UIBezierPath ,
+                                   duration: TimeInterval = 1,
+                                   repeatCount: Float = 1,
+                                   autoreverses: Bool = false) -> UIView {
+        let animation = CAKeyframeAnimation(keyPath: "position")
         animation.path = path.cgPath
         animation.calculationMode = kCAAnimationLinear
         animation.duration = duration
-        layer.add(animation, forKey: "follow")
+        animation.autoreverses = autoreverses
+        animation.repeatCount = repeatCount
+        self.layer.add(animation, forKey: "followPath")
         return self
     }
     

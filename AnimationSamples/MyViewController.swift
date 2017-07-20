@@ -137,7 +137,10 @@ class MyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewData
         case .scale:
             animatedView.scale()
         case .follow:
-            animatedView.follow()
+            
+            let circle = UIBezierPath()
+            circle.addArc(withCenter: CGPoint(x: 187, y: 200 ), radius: 50, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
+            animatedView.follow(path: circle, duration: 2, repeatCount: 3)
         }
     }
 }
