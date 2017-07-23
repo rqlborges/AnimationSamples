@@ -9,7 +9,7 @@
 import UIKit
 
 public class FourBallsViewController: UIViewController {
-
+    
     //Circles
     var mainCircle = UIView()
     var topCircle = UIView()
@@ -21,9 +21,6 @@ public class FourBallsViewController: UIViewController {
     var fourBallsPosition = CGPoint()
     var fourBallsPositionX: CGFloat?
     var fourBallsPositionY: CGFloat?
-        
-    
-    //Go To Positions
     
     
     override public func viewDidLoad() {
@@ -45,7 +42,7 @@ public class FourBallsViewController: UIViewController {
     public func fourBalls(circleSize: CGFloat, fourBallsPosition: CGPoint, mainBallColor: UIColor, topBallColor: UIColor, rightBallColor: UIColor, bottonBallColor: UIColor, leftBallColor: UIColor){
         
         let mainCircleCornerRadius = circleSize / 2
-        let sideBallsSize = circleSize / 1.5
+        let sideBallsSize = circleSize / 2
         let sideCirclesCornerRadius = sideBallsSize / 2
         
         
@@ -57,7 +54,6 @@ public class FourBallsViewController: UIViewController {
         mainCircle.layer.cornerRadius = mainCircleCornerRadius
         mainCircle.layer.zPosition = 0
         self.view.addSubview(mainCircle)
-        
         
         topCircle = UIView(frame: CGRect(x: fourBallsPosition.x, y: fourBallsPosition.y, width: sideBallsSize, height: sideBallsSize))
         topCircle.center = fourBallsPosition
@@ -100,7 +96,7 @@ public class FourBallsViewController: UIViewController {
             
             self.leftCircle.center = CGPoint(x: self.fourBallsPositionX! - self.circleSize! - 5, y: self.fourBallsPositionY!)
             
-            self.mainCircle.frame.size = CGSize(width: self.mainCircle.frame.size.width / 1.5, height: self.mainCircle.frame.size.height / 1.5)
+            self.mainCircle.frame.size = CGSize(width: self.mainCircle.frame.size.width / 2, height: self.mainCircle.frame.size.height / 2)
             self.mainCircle.center = CGPoint(x: self.fourBallsPositionX!, y: self.fourBallsPositionY!)
             self.mainCircle.layer.cornerRadius = self.mainCircle.frame.size.width / 2
         }, completion: { completion in
@@ -123,8 +119,8 @@ public class FourBallsViewController: UIViewController {
     @IBAction func fourBallAnimation(_ sender: Any) {
         fourBallsAnimation(animationDuration: 0.2)
     }
-    
-    
+
+
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

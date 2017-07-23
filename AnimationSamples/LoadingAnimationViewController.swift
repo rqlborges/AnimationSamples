@@ -1,4 +1,4 @@
-//
+
 //  CircleCheckViewController.swift
 //  AnimationTest
 //
@@ -37,6 +37,7 @@ class LoadingAnimationViewController: UIViewController {
         circleLayer.path = circlePath.cgPath
         circleLayer.strokeEnd = 1
         circleLayer.strokeStart = 0
+        print("StrokeStaart = 0")
         
         //Add Circle
         self.view.layer.addSublayer(circleLayer)
@@ -50,12 +51,13 @@ class LoadingAnimationViewController: UIViewController {
             CATransaction.begin()
             CATransaction.setCompletionBlock({
                 self.circleLayer.removeAllAnimations()
-                self.circleLayer.strokeEnd = 0
-//                                self.circleLayer.removeFromSuperlayer()
-//                self.circleCheck()
+                self.circleLayer.removeFromSuperlayer()
+                self.circleCheck()
             })
             
             //Erase Animation
+            self.circleLayer.strokeStart = 1
+            print("StrokeStaart = 1")
             let circleEraseAnimation = CABasicAnimation(keyPath: "strokeStart")
             circleEraseAnimation.fromValue = 0
             circleEraseAnimation.toValue = 1
