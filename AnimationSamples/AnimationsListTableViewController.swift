@@ -19,6 +19,7 @@ class AnimationsListTableViewController: UITableViewController {
         screens.append("PulsePlayButton")
         screens.append("SidebarButton")
         screens.append("FourBalls")
+        screens.append("FullScreen")
         
     }
     

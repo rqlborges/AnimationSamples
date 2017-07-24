@@ -235,7 +235,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jen-cc-WP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3588" y="-200"/>
+            <point key="canvasLocation" x="3590" y="-200"/>
+        </scene>
+        <!--Full Screen View Controller-->
+        <scene sceneID="7s2-10-Mjj">
+            <objects>
+                <viewController storyboardIdentifier="Screen5" id="8kf-SJ-vXt" customClass="FullScreenViewController" customModule="AnimationSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wAF-Xe-RAz"/>
+                        <viewControllerLayoutGuide type="bottom" id="hI1-rH-Sdl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="qhC-Y0-UlF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlv-Q7-kP5">
+                                <rect key="frame" x="16" y="575" width="343" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Animate!"/>
+                                <connections>
+                                    <action selector="animation:" destination="8kf-SJ-vXt" eventType="touchUpInside" id="2t5-m5-Zed"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BL-he-HCR">
+                                <rect key="frame" x="16" y="611" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="8kf-SJ-vXt" eventType="touchUpInside" id="aeM-TZ-GAE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hI1-rH-Sdl" firstAttribute="top" secondItem="Zlv-Q7-kP5" secondAttribute="bottom" constant="50" id="5GY-kd-jNc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zlv-Q7-kP5" secondAttribute="trailing" id="I2F-5Z-TmF"/>
+                            <constraint firstItem="8BL-he-HCR" firstAttribute="leading" secondItem="qhC-Y0-UlF" secondAttribute="leadingMargin" id="e5V-9w-j6e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8BL-he-HCR" secondAttribute="trailing" id="gFh-TB-3Dv"/>
+                            <constraint firstItem="Zlv-Q7-kP5" firstAttribute="leading" secondItem="qhC-Y0-UlF" secondAttribute="leadingMargin" id="sea-Xb-4JE"/>
+                            <constraint firstItem="hI1-rH-Sdl" firstAttribute="top" secondItem="8BL-he-HCR" secondAttribute="bottom" constant="20" id="zG5-kI-mcr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TjR-0c-vHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4394" y="-200"/>
         </scene>
     </scenes>
     <resources>
