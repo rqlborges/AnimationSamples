@@ -15,11 +15,7 @@ class PulseAnimationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pulseAnimation(button: playButton, animationDuration: 0.8, repeatCount: HUGE, maxPulse: 0.8, maxOpacity: 0.8)
-        
-        
-        
-        
+        pulseAnimation(viewToAnimate: playButton, animationDuration: 0.8, repeatCount: HUGE, maxPulse: 0.8, maxOpacity: 0.8)
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +23,7 @@ class PulseAnimationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func pulseAnimation(button: UIButton, animationDuration: Double, repeatCount: Float, maxPulse: Double, maxOpacity: Double){
+    public func pulseAnimation(viewToAnimate: UIView, animationDuration: Double, repeatCount: Float, maxPulse: Double, maxOpacity: Double){
         //Pulse Animation
         let pulseAnimation = CABasicAnimation(keyPath: "transform.scale")
         pulseAnimation.fromValue = 1.0
@@ -35,7 +31,7 @@ class PulseAnimationViewController: UIViewController {
         pulseAnimation.duration = animationDuration
         pulseAnimation.repeatCount = repeatCount
         pulseAnimation.autoreverses = true
-        button.layer.add(pulseAnimation, forKey: "addLayerAnimationScale")
+        viewToAnimate.layer.add(pulseAnimation, forKey: "addLayerAnimationScale")
         
         //Opacity Animation
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
@@ -44,11 +40,11 @@ class PulseAnimationViewController: UIViewController {
         opacityAnimation.duration = animationDuration
         opacityAnimation.repeatCount = repeatCount
         opacityAnimation.autoreverses = true
-        button.layer.add(opacityAnimation, forKey: "addLayerAnimationOpacity")
+        viewToAnimate.layer.add(opacityAnimation, forKey: "addLayerAnimationOpacity")
     }
     
     @IBAction func animate(_ sender: Any) {
-        pulseAnimation(button: playButton, animationDuration: 0.8, repeatCount: HUGE, maxPulse: 0.8, maxOpacity: 0.8)
+        pulseAnimation(viewToAnimate: playButton, animationDuration: 0.8, repeatCount: HUGE, maxPulse: 0.8, maxOpacity: 0.8)
     }
     
     @IBAction func dismiss(_ sender: Any) {

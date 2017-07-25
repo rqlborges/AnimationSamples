@@ -35,7 +35,7 @@ class SideBarButtonViewController: UIViewController {
     }
     
     
-    func sideBarButton(){
+    public func sideBarButton(){
         
         //Positions
         viewCenter = self.view.center
@@ -60,7 +60,7 @@ class SideBarButtonViewController: UIViewController {
     }
     
     
-    func sideBarButtonAnimation(){
+    public func sideBarButtonAnimation(){
         //Set Animations
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
             

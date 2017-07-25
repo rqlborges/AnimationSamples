@@ -28,8 +28,6 @@ public class FourBallsViewController: UIViewController {
         
         circleSize = 20
         fourBallsPosition = CGPoint(x: view.center.x, y: view.center.y)
-        fourBallsPositionX = fourBallsPosition.x
-        fourBallsPositionY = fourBallsPosition.y
         
         fourBalls(circleSize: circleSize!, fourBallsPosition: fourBallsPosition, mainBallColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), topBallColor: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), rightBallColor: #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1), bottonBallColor: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), leftBallColor: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
         
@@ -47,6 +45,8 @@ public class FourBallsViewController: UIViewController {
         let sideBallsSize = circleSize / 2
         let sideCirclesCornerRadius = sideBallsSize / 2
         
+        self.fourBallsPositionX = fourBallsPosition.x
+        self.fourBallsPositionY = fourBallsPosition.y
         
         
         //Set Circles
