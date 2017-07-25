@@ -8,8 +8,16 @@
 
 import UIKit
 
-//TODO: - Description
-public enum ViewEdge {
+/**
+ Edge of the view's superview, that may serve as reference to it's movements.
+ - **none:** no edge
+ - **top:** the top edge of the superview
+ - **bottom:** the bottom edge of the superview
+ - **left:** the left edge of the superview
+ - **right:** the right edge of the superview
+ 
+ */
+public enum SuperviewEdge {
     case none
     case top
     case bottom
@@ -17,20 +25,52 @@ public enum ViewEdge {
     case right
 }
 
-//TODO: - Description
+/**
+ Determines the orientation of specific movements.
+ - **horizontal:** horizontal orientation
+ - **vertical:** vertical orientation
+ */
 public enum Direction {
     case horizonal
     case vertical
 }
 
 //MARK: - UIView Extension
+/**
+ A UIView extension created to make basic animations simple to design, to use and to implement.
+ */
 public extension UIView {
     
     //MARK: - FadeIn
-    //TODO: Description
+    /**
+     Fades the view in.
+     
+     - Parameters:
+         - duration: Animation duration in seconds.
+     
+             Default value: **2**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     */
     @discardableResult func fadeIn(duration: TimeInterval = 2,
                                    delay: TimeInterval = 0,
-                                   options: UIViewAnimationOptions = .curveEaseOut,
+                                   options: UIViewAnimationOptions = .curveLinear,
                                    completion: ((Bool) -> Void)? = nil) -> UIView {
         alpha = 0
         UIView.animate(
@@ -42,10 +82,35 @@ public extension UIView {
     }
     
     //MARK: - FadeOut
-    //TODO: Description
+    /**
+     Fades the view in.
+     
+     - Parameters:
+         - duration: Animation duration in seconds.
+     
+             Default value: **2**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     */
     @discardableResult func fadeOut(duration: TimeInterval = 2,
                                     delay: TimeInterval = 0,
-                                    options: UIViewAnimationOptions = .curveEaseOut,
+                                    options: UIViewAnimationOptions = .curveLinear,
                                     completion: ((Bool) -> Void)? = nil) -> UIView {
         alpha = 1
         UIView.animate(
@@ -56,13 +121,55 @@ public extension UIView {
     }
     
     //MARK: - PopIn
-    //TODO: Description
+    /**
+     Pops the view in.
+     
+     - Parameters:
+         - fromScale: The initial scale of the pop in.
+     
+             Default value: **0.5**
+     
+         - damping:The damping ratio for the spring animation as it approaches its quiescent state.
+     
+             To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation.
+     
+             Default value: **1.0**
+     
+         - velocity:The initial spring velocity. For smooth start to the animation, match this value to the view’s velocity as it was prior to attachment.
+     
+             A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5.
+     
+             Default value: **0**
+     
+         - duration: Animation duration in seconds.
+     
+             Default value: **2**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     
+     */
     @discardableResult func popIn(fromScale: CGFloat = 0.5,
                                   damping:CGFloat = 1.0,
                                   velocity:CGFloat = 0,
                                   duration: TimeInterval = 1.0,
                                   delay: TimeInterval = 0,
-                                  options: UIViewAnimationOptions = .curveEaseOut,
+                                  options: UIViewAnimationOptions = .curveLinear,
                                   completion: ((Bool) -> Void)? = nil) -> UIView {
         alpha = 0
         transform = CGAffineTransform(scaleX: fromScale, y: fromScale)
@@ -104,14 +211,14 @@ public extension UIView {
     
     //MARK: - SlideIn
     //TODO: Description
-    @discardableResult func slideIn(from edge: ViewEdge = .none,
+    @discardableResult func slideIn(from edge: SuperviewEdge = .none,
                                     x: CGFloat = 0,
                                     y: CGFloat = 0,
                                     damping:CGFloat = 1.0,
                                     velocity:CGFloat = 0,
                                     duration: TimeInterval = 1.0,
                                     delay: TimeInterval = 0,
-                                    options: UIViewAnimationOptions = .curveEaseOut,
+                                    options: UIViewAnimationOptions = .curveLinear,
                                     completion: ((Bool) -> Void)? = nil) -> UIView {
         let offset = offsetFor(edge: edge)
         transform = CGAffineTransform(translationX: offset.x + x, y: offset.y + y)
@@ -127,14 +234,14 @@ public extension UIView {
     
     //MARK: - SlideOut
     //TODO: Description
-    @discardableResult func slideOut(to edge: ViewEdge = .none,
+    @discardableResult func slideOut(to edge: SuperviewEdge = .none,
                                      x: CGFloat = 0,
                                      y: CGFloat = 0,
                                      damping:CGFloat = 1.0,
                                      velocity:CGFloat = 0,
                                      duration: TimeInterval = 1.0,
                                      delay: TimeInterval = 0,
-                                     options: UIViewAnimationOptions = .curveEaseOut,
+                                     options: UIViewAnimationOptions = .curveLinear,
                                      completion: ((Bool) -> Void)? = nil) -> UIView {
         var backwards = CGPoint(x: x, y: y)
         switch edge {
@@ -186,7 +293,7 @@ public extension UIView {
                                  velocity:CGFloat = 0,
                                  duration: TimeInterval = 1.0,
                                  delay: TimeInterval = 0,
-                                 options: UIViewAnimationOptions = .curveEaseOut,
+                                 options: UIViewAnimationOptions = .curveLinear,
                                  completion: ((Bool) -> Void)? = nil) -> UIView {
         UIView.animate(
             withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
@@ -202,7 +309,7 @@ public extension UIView {
                                    velocity:CGFloat = 0,
                                    duration: TimeInterval = 1.0,
                                    delay: TimeInterval = 0,
-                                   options: UIViewAnimationOptions = .curveEaseOut,
+                                   options: UIViewAnimationOptions = .curveLinear,
                                    completion: ((Bool) -> Void)? = nil) -> UIView {
         let angleInRadians = angle * .pi / 180
         let rotation = CGAffineTransform(rotationAngle: angleInRadians)
@@ -220,7 +327,7 @@ public extension UIView {
                                   velocity:CGFloat = 0,
                                   duration: TimeInterval = 1.0,
                                   delay: TimeInterval = 0,
-                                  options: UIViewAnimationOptions = .curveEaseOut,
+                                  options: UIViewAnimationOptions = .curveLinear,
                                   completion: ((Bool) -> Void)? = nil) -> UIView {
         let endScale = CGAffineTransform(scaleX: proportion, y:proportion)
         UIView.animate(
@@ -246,8 +353,13 @@ public extension UIView {
         return self
     }
     
-    //TODO: - Description
-    private func offsetFor(edge: ViewEdge) -> CGPoint {
+    /**
+     Calculate the offset for the given edge of the superview.
+     - Parameters:
+         - edge: A SuperviewEdge that represents the direction you want the view to translate.
+     - Returns: A CGPoint that can set the view position outside of the superview.
+     */
+    private func offsetFor(edge: SuperviewEdge) -> CGPoint {
         if let parentSize = self.superview?.frame.size {
             switch edge {
             case .none: return CGPoint.zero
