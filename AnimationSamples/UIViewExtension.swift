@@ -48,7 +48,7 @@ public extension UIView {
      - Parameters:
          - duration: Animation duration in seconds.
      
-             Default value: **2**
+             Default value: **2.0**
      
          - delay: Animation start delay in seconds.
      
@@ -88,7 +88,7 @@ public extension UIView {
      - Parameters:
          - duration: Animation duration in seconds.
      
-             Default value: **2**
+             Default value: **2.0**
      
          - delay: Animation start delay in seconds.
      
@@ -143,7 +143,7 @@ public extension UIView {
      
          - duration: Animation duration in seconds.
      
-             Default value: **2**
+             Default value: **1.0**
      
          - delay: Animation start delay in seconds.
      
@@ -183,7 +183,41 @@ public extension UIView {
     }
     
     //MARK: - PopOut
-    //TODO: Description
+    /**
+     Pops the view in.
+     
+     - Parameters:
+         - toScale: The initial scale of the pop in.
+     
+             Default value: **0.5**
+     
+         - pulseScale: The scale of the intermidiate pulse before poping out.
+     
+             Default value: **1.1**
+     
+         - duration: Animation duration in seconds.
+     
+             Default value: **1.0**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     
+     */
     @discardableResult func popOut(toScale: CGFloat = 0.5,
                                    pulseScale: CGFloat = 1.1,
                                    duration: TimeInterval = 1.0,
@@ -210,7 +244,59 @@ public extension UIView {
     }
     
     //MARK: - SlideIn
-    //TODO: Description
+    /**
+     Slides the view in, from the choosen edge of the superview, or a fixed offset
+     away from its position (if "x" and "y" are set).
+     
+     - Parameters:
+         - from: The superview edge that will determine the offset calculation of the starting position.
+     
+             Default value: **.none**
+     
+         - x: The x coordinate of the fixed offset option.
+     
+             Default value: **0**
+     
+         - y: The y coordinate of the fixed offset option.
+     
+             Default value: **0**
+     
+         - damping:The damping ratio for the spring animation as it approaches its quiescent state.
+     
+             To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation.
+     
+             Default value: **1.0**
+     
+         - velocity:The initial spring velocity. For smooth start to the animation, match this value to the view’s velocity as it was prior to attachment.
+     
+             A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5.
+     
+             Default value: **0**
+     
+         - duration: Animation duration in seconds.
+     
+             Default value: **1.0**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     
+     
+     */
     @discardableResult func slideIn(from edge: SuperviewEdge = .none,
                                     x: CGFloat = 0,
                                     y: CGFloat = 0,
@@ -233,7 +319,59 @@ public extension UIView {
     }
     
     //MARK: - SlideOut
-    //TODO: Description
+    /**
+     Slides the view out of its position, toward an edge of the superview. Another alternative is to bounce the view with a given offset
+     away from its position (if "x" and "y" are set), in the oposite direction of the main movement, than slide out.
+     
+     - Parameters:
+         - to: The superview edge that will determine the final position.
+     
+             Default value: **.none**
+     
+         - x: The x coordinate of the fixed final position option.
+     
+             Default value: **0**
+     
+         - y: The y coordinate of the fixed final position option.
+     
+             Default value: **0**
+     
+         - damping:The damping ratio for the spring animation as it approaches its quiescent state.
+     
+             To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation.
+     
+             Default value: **1.0**
+     
+         - velocity:The initial spring velocity. For smooth start to the animation, match this value to the view’s velocity as it was prior to attachment.
+     
+             A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5.
+     
+             Default value: **0**
+     
+         - duration: Animation duration in seconds.
+     
+             Default value: **1.0**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     
+     
+     */
     @discardableResult func slideOut(to edge: SuperviewEdge = .none,
                                      x: CGFloat = 0,
                                      y: CGFloat = 0,
@@ -273,7 +411,8 @@ public extension UIView {
         return self
     }
     
-    //TODO: - Finish Shake
+    //MARK: - Shake
+    //TODO: Finish Shake
     @discardableResult func shake (direction:Direction = .horizonal) -> UIView {
         let animation = CAKeyframeAnimation()
         animation.keyPath = (direction == .horizonal ? "position.x" : "position.y")
@@ -287,7 +426,48 @@ public extension UIView {
     }
     
     //MARK: - Move(to:)
-    //TODO: Description
+    /**
+     Moves the from it's current position, to the given position.
+     
+     - Parameters:
+     
+         - to: The x and y coordinate that should be the final possition of the view's movement.
+     
+         - damping: The damping ratio for the spring animation as it approaches its quiescent state.
+     
+             To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation.
+     
+             Default value: **1.0**
+     
+         - velocity: The initial spring velocity. For smooth start to the animation, match this value to the view’s velocity as it was prior to attachment.
+     
+             A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5.
+     
+             Default value: **0**
+     
+         - duration: Animation duration in seconds.
+     
+             Default value: **1.0**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     
+     */
     @discardableResult func move(to endPoint:CGPoint,
                                  damping:CGFloat = 1.0,
                                  velocity:CGFloat = 0,
@@ -321,7 +501,50 @@ public extension UIView {
     }
     
     //MARK: - Scale
-    //TODO: Descriptionm
+    /**
+     Scales the view
+     
+     - Parameters:
+     
+         - proportion: The final proportion the view will have at the end of the animation, relative to it's original size.
+     
+             Default value: **1.3**
+     
+         - damping: The damping ratio for the spring animation as it approaches its quiescent state.
+     
+             To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation.
+     
+             Default value: **1.0**
+     
+         - velocity: The initial spring velocity. For smooth start to the animation, match this value to the view’s velocity as it was prior to attachment.
+     
+             A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5.
+     
+             Default value: **0**
+     
+         - duration: Animation duration in seconds.
+     
+             Default value: **1.0**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     
+     */
     @discardableResult func scale(proportion:CGFloat = 1.3,
                                   damping:CGFloat = 1.0,
                                   velocity:CGFloat = 0,
@@ -338,7 +561,31 @@ public extension UIView {
         return self
     }
     
-    //TODO: - Follow(path:)
+    //MARK: - Follow(path:)
+    /**
+     Makes the view follow a given UIBezierPath.
+     
+     - Parameters:
+         - path: The path to be followed.
+     
+         - duration: Animation duration in seconds.
+     
+             Default value: **1.0**
+     
+         - repeatCount: The number of times that the animation should repeat.
+     
+             Default value: **1.0**
+     
+         - autoreverses: Boolean value that determines if the animation should go backwards just after it ends.
+     
+             Default value: **False**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     */
     @discardableResult func follow(path: UIBezierPath ,
                                    duration: TimeInterval = 1,
                                    repeatCount: Float = 1,
@@ -353,6 +600,7 @@ public extension UIView {
         return self
     }
     
+    //MARK: - Offset for edge
     /**
      Calculate the offset for the given edge of the superview.
      - Parameters:
