@@ -412,11 +412,41 @@ public extension UIView {
     }
     
     //MARK: - Shake
-    //TODO: Finish Shake
-    @discardableResult func shake (direction:Direction = .horizonal) -> UIView {
+    /**
+     Shakes the view.
+     
+     - Parameters:
+         - direction: The orientation of the movement.
+     
+             Default value: **.horizontal**
+     
+         - amount: The amount of movement relative to the view's average height and width.
+     
+             Default value: **0.05**
+     
+         - duration: The duration of the whole animation.
+     
+             Default value: **0.115**
+     
+         - repeatCount: The number of times that the oscilation movement, that causes the shake efect, will repeat.
+     
+             Default value: **5**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     
+     */
+    @discardableResult func shake (direction:Direction = .horizonal,
+                                   amount: CGFloat = 0.05,
+                                   duration: TimeInterval = 0.115,
+                                   repeatCount: Float = 5) -> UIView {
+        let frameRatio = (frame.width + frame.height) / 2
         let animation = CAKeyframeAnimation()
         animation.keyPath = (direction == .horizonal ? "position.x" : "position.y")
-        animation.values = [0,5,0,-5,0]
+        animation.values = [0, frameRatio * amount, 0, -frameRatio * amount, 0]
         animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
         animation.duration = 0.115
         animation.isAdditive = true
@@ -483,7 +513,50 @@ public extension UIView {
     }
     
     //MARK: - Rotate
-    //TODO: Save last angle
+    /**
+     Rotates the view.
+     Moves the from it's current position, to the given position.
+     
+     - Parameters:
+         - degrees: The value, in degrees, that the view should rotate.
+     
+             Default value: **180**
+     
+         - damping: The damping ratio for the spring animation as it approaches its quiescent state.
+     
+             To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation.
+     
+             Default value: **1.0**
+     
+         - velocity: The initial spring velocity. For smooth start to the animation, match this value to the view’s velocity as it was prior to attachment.
+     
+             A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5.
+     
+             Default value: **0**
+     
+         - duration: Animation duration in seconds.
+     
+             Default value: **1.0**
+     
+         - delay: Animation start delay in seconds.
+     
+             Default value: **0**
+     
+         - options: Determines the animation curve.
+     
+             Default value: **.curveLinear**
+     
+         - completion: Completion handler. A block of code called right after the ending of the animation. Can be used to concatenate animations.
+     
+             Default value: **nill**
+     
+     - Returns: The UIView itself. It makes possible the chaining of similar methods. You can created combinations of animations that way. For example:
+         ````
+         view.move(to:).fadeOut().rotate()
+         ````
+         It will make the view move to a given CGPoint, fadeOut , and rotate 180 degrees at the same time.
+     
+     */
     @discardableResult func rotate(degrees angle:CGFloat = 180,
                                    damping:CGFloat = 1.0,
                                    velocity:CGFloat = 0,
