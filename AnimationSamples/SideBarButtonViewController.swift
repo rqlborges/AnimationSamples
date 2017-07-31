@@ -14,64 +14,88 @@ class SideBarButtonViewController: UIViewController {
     var viewCenter: CGPoint!
     var topLinePosition: CGPoint!
     var middleLinePosition: CGPoint!
-    var bottonLinePosition: CGPoint!
+    var bottomLinePosition: CGPoint!
     
     //Views
     var topLineView = UIView()
     var middleLineView = UIView()
-    var bottonLineView = UIView()
+    var bottomLineView = UIView()
     
     //Controls how the sidebar status
     var isSideBarOpen = false
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideBarButton()
+        sideBarButton(viewToDraw: self.view, center: self.view.center, lineColor: UIColor.black, lineLength: 50, lineThickness: 3)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
-    public func sideBarButton(){
+    /**
+     Draw a side bar button. It consists in 3 stacked lines.
+     
+     - Parameters:
+         - viewToDraw: The view that will contain the side bar button.
+     
+         - center: The center of the button. Used to set it position.
+     
+         - lineColor: Color of the lines of the button.
+     
+         - lineLength: Defines the button width.
+     
+         - lineThickness: Defines the lines thickness of the button.
+     
+     */
+    public func sideBarButton(viewToDraw: UIView, center: CGPoint, lineColor: UIColor, lineLength: CGFloat, lineThickness: CGFloat){
         
         //Positions
-        viewCenter = self.view.center
-        topLinePosition = CGPoint(x: viewCenter.x, y: view.center.y - 8)
-        middleLinePosition = CGPoint(x: viewCenter.x, y: viewCenter.y)
-        bottonLinePosition = CGPoint(x: viewCenter.x, y: viewCenter.y + 8)
-
+        self.viewCenter = center
+        self.topLinePosition = CGPoint(x: viewCenter.x - lineLength / 2, y: view.center.y - lineThickness - 8)
+        self.middleLinePosition = CGPoint(x: viewCenter.x - lineLength / 2, y: viewCenter.y)
+        self.bottomLinePosition = CGPoint(x: viewCenter.x - lineLength / 2, y: viewCenter.y + lineThickness + 8)
+        
         //Set Views
-        topLineView = UIView(frame: CGRect(x: topLinePosition.x, y: topLinePosition.y, width: 25, height: 3))
-        topLineView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        self.view.addSubview(topLineView)
+        topLineView = UIView(frame: CGRect(x: topLinePosition.x, y: topLinePosition.y, width: lineLength, height: lineThickness))
+        topLineView.backgroundColor = lineColor
+        viewToDraw.addSubview(topLineView)
         
-        middleLineView = UIView(frame: CGRect(x: middleLinePosition.x, y: middleLinePosition.y, width: 25, height: 3))
-        middleLineView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        middleLineView = UIView(frame: CGRect(x: middleLinePosition.x, y: middleLinePosition.y, width: lineLength, height: lineThickness))
+        middleLineView.backgroundColor = lineColor
         middleLineView.isUserInteractionEnabled = true
-        self.view.addSubview(middleLineView)
+        viewToDraw.addSubview(middleLineView)
         
-        bottonLineView = UIView(frame: CGRect(x: bottonLinePosition.x, y: bottonLinePosition.y, width: 25, height: 3))
-        bottonLineView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        self.view.addSubview(bottonLineView)
-
+        bottomLineView = UIView(frame: CGRect(x: bottomLinePosition.x, y: bottomLinePosition.y, width: lineLength, height: lineThickness))
+        bottomLineView.backgroundColor = lineColor
+        viewToDraw.addSubview(bottomLineView)
+        
     }
     
+    /**
+     **You must call the sideBarButton function before calling this one**
+     
+     Animate the side bar button. Call this function when the button is clicked.
+     This animation position the top line and the bottom line in the same position as the middle line.
+     
+     
+     - Parameters:
+         - duration: Animation duration in seconds.
+     */
     
-    public func sideBarButtonAnimation(){
+    public func sideBarButtonAnimation(duration: Double){
         //Set Animations
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: {
             
             if(!self.isSideBarOpen){
                 self.topLineView.frame.origin = self.middleLinePosition
-                self.bottonLineView.frame.origin = self.middleLinePosition
+                self.bottomLineView.frame.origin = self.middleLinePosition
                 
                 self.isSideBarOpen = true
             } else{
                 self.topLineView.frame.origin = self.topLinePosition
-                self.bottonLineView.frame.origin = self.bottonLinePosition
+                self.bottomLineView.frame.origin = self.bottomLinePosition
                 
                 self.isSideBarOpen = false
             }
@@ -79,13 +103,13 @@ class SideBarButtonViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        sideBarButtonAnimation()
+        sideBarButtonAnimation(duration: 0.2)
     }
     
     
     
     @IBAction func animate(_ sender: Any) {
-        sideBarButtonAnimation()
+        sideBarButtonAnimation(duration: 0.2)
     }
     
     @IBAction func dismiss(_ sender: Any) {

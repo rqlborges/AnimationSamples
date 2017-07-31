@@ -14,7 +14,7 @@ class FourBalls: UIView {
     var mainCircle = UIView()
     var topCircle = UIView()
     var rightCircle = UIView()
-    var bottonCircle = UIView()
+    var bottomCircle = UIView()
     var leftCircle = UIView()
     
     var circleSize: CGFloat?
@@ -26,8 +26,28 @@ class FourBalls: UIView {
     
     var calledDrawFourBalls = false
     
+    /**
+     Draw all the balls.
+     
+     - Parameters:
+         - mainView: The view that contains the four balls.
+     
+         - circleSize: Defines the main ball size. The other balls will have half of the size.
+     
+         - fourBallsPosition: Center of the balls. Used to define it position.
+     
+         - mainBallColor: Color of the main ball.
+     
+         - topBallColor: Color of the ball that goes up.
+     
+         - rightBallColor: Color of the ball that goes right.
+     
+         - bottomBallColor: Color of the ball that goes down.
+     
+         - leftBallColor: Color of the ball that goes left.
+     */
     
-    public func drawFourBalls(mainView: UIView, circleSize: CGFloat, fourBallsPosition: CGPoint, mainBallColor: UIColor, topBallColor: UIColor, rightBallColor: UIColor, bottonBallColor: UIColor, leftBallColor: UIColor){
+    public func drawFourBalls(mainView: UIView, circleSize: CGFloat, fourBallsCenter: CGPoint, mainBallColor: UIColor, topBallColor: UIColor, rightBallColor: UIColor, bottomBallColor: UIColor, leftBallColor: UIColor){
         
         let sideBallsSize = circleSize / 2
         let sideCirclesCornerRadius = sideBallsSize / 2
@@ -35,41 +55,41 @@ class FourBalls: UIView {
         //Set Attributes
         self.circleSize = circleSize
         self.mainCircleCornerRadius = circleSize / 2
-        self.fourBallsPosition = fourBallsPosition
-        self.fourBallsPositionX = fourBallsPosition.x
-        self.fourBallsPositionY = fourBallsPosition.y
+        self.fourBallsPosition = fourBallsCenter
+        self.fourBallsPositionX = fourBallsCenter.x
+        self.fourBallsPositionY = fourBallsCenter.y
         
         //Set Circles
-        mainCircle = UIView(frame: CGRect(x: fourBallsPosition.x, y: fourBallsPosition.y, width: circleSize, height: circleSize))
-        mainCircle.center = fourBallsPosition
+        mainCircle = UIView(frame: CGRect(x: fourBallsCenter.x, y: fourBallsCenter.y, width: circleSize, height: circleSize))
+        mainCircle.center = fourBallsCenter
         mainCircle.backgroundColor = mainBallColor
         mainCircle.layer.cornerRadius = mainCircleCornerRadius!
         mainCircle.layer.zPosition = 0
         mainView.addSubview(mainCircle)
         
-        topCircle = UIView(frame: CGRect(x: fourBallsPosition.x, y: fourBallsPosition.y, width: sideBallsSize, height: sideBallsSize))
-        topCircle.center = fourBallsPosition
+        topCircle = UIView(frame: CGRect(x: fourBallsCenter.x, y: fourBallsCenter.y, width: sideBallsSize, height: sideBallsSize))
+        topCircle.center = fourBallsCenter
         topCircle.backgroundColor = topBallColor
         topCircle.layer.cornerRadius = sideCirclesCornerRadius
         topCircle.layer.zPosition = -1
         mainView.addSubview(topCircle)
         
-        rightCircle = UIView(frame: CGRect(x: fourBallsPosition.x, y: fourBallsPosition.y, width: sideBallsSize, height: sideBallsSize))
-        rightCircle.center = fourBallsPosition
+        rightCircle = UIView(frame: CGRect(x: fourBallsCenter.x, y: fourBallsCenter.y, width: sideBallsSize, height: sideBallsSize))
+        rightCircle.center = fourBallsCenter
         rightCircle.backgroundColor = rightBallColor
         rightCircle.layer.cornerRadius = sideCirclesCornerRadius
         rightCircle.layer.zPosition = -2
         mainView.addSubview(rightCircle)
         
-        bottonCircle = UIView(frame: CGRect(x: fourBallsPosition.x, y: fourBallsPosition.y, width: sideBallsSize, height: sideBallsSize))
-        bottonCircle.center = fourBallsPosition
-        bottonCircle.backgroundColor = bottonBallColor
-        bottonCircle.layer.cornerRadius = sideCirclesCornerRadius
-        bottonCircle.layer.zPosition = -3
-        mainView.addSubview(bottonCircle)
+        bottomCircle = UIView(frame: CGRect(x: fourBallsCenter.x, y: fourBallsCenter.y, width: sideBallsSize, height: sideBallsSize))
+        bottomCircle.center = fourBallsCenter
+        bottomCircle.backgroundColor = bottomBallColor
+        bottomCircle.layer.cornerRadius = sideCirclesCornerRadius
+        bottomCircle.layer.zPosition = -3
+        mainView.addSubview(bottomCircle)
         
-        leftCircle = UIView(frame: CGRect(x: fourBallsPosition.x, y: fourBallsPosition.y, width: sideBallsSize, height: sideBallsSize))
-        leftCircle.center = fourBallsPosition
+        leftCircle = UIView(frame: CGRect(x: fourBallsCenter.x, y: fourBallsCenter.y, width: sideBallsSize, height: sideBallsSize))
+        leftCircle.center = fourBallsCenter
         leftCircle.backgroundColor = leftBallColor
         leftCircle.layer.cornerRadius = sideCirclesCornerRadius
         leftCircle.layer.zPosition = -4
@@ -78,6 +98,16 @@ class FourBalls: UIView {
         self.calledDrawFourBalls = true
         
     }
+    
+    /**
+     **You must call the drawFourBalls function before calling this one**
+     
+     Animate the four balls.
+     
+     - Parameters:
+         - animationDuration: Animation duration in seconds.
+     
+     */
     
     public func fourBallsAnimation(animationDuration: Double){
         
@@ -89,7 +119,7 @@ class FourBalls: UIView {
                 
                 self.rightCircle.center = CGPoint(x: self.fourBallsPositionX! + self.circleSize! + 5, y: self.fourBallsPositionY!)
                 
-                self.bottonCircle.center = CGPoint(x: self.fourBallsPositionX!, y: self.fourBallsPositionY! + self.circleSize! + 5)
+                self.bottomCircle.center = CGPoint(x: self.fourBallsPositionX!, y: self.fourBallsPositionY! + self.circleSize! + 5)
                 
                 self.leftCircle.center = CGPoint(x: self.fourBallsPositionX! - self.circleSize! - 5, y: self.fourBallsPositionY!)
                 
@@ -101,7 +131,7 @@ class FourBalls: UIView {
                 UIView.animate(withDuration: animationDuration, delay: 0, animations: {
                     self.topCircle.center = self.fourBallsPosition
                     self.rightCircle.center = self.fourBallsPosition
-                    self.bottonCircle.center = self.fourBallsPosition
+                    self.bottomCircle.center = self.fourBallsPosition
                     self.leftCircle.center = self.fourBallsPosition
                     
                     self.mainCircle.frame.size = CGSize(width: self.circleSize!, height: self.circleSize!)
