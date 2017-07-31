@@ -20,6 +20,24 @@ class LoadingAnimationViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    /**
+     Circle drawing animation for loading screens.
+     
+     - Parameters:
+         - circleCenter: Center of the circle. Used to defined the circle position.
+     
+         - circleRadius: Radius of the circle used to define its size.
+     
+         - circleColor: Color of the circle stroke.
+     
+         - circleWidth: Width of the circle stroke.
+     
+         - clockwise: Defines if the circle drawing animation runs clockwise or not.
+     
+         - animationDuration: Animation duration in secods.
+
+     
+     */
     
     public func circleCheck(circleCenter: CGPoint, circleRadius: CGFloat, circleColor: CGColor, circleWidth: CGFloat, clockwise: Bool, animationDuration: Double){
         
