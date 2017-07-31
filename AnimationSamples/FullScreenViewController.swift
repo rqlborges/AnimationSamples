@@ -47,7 +47,7 @@ class FullScreenViewController: UIViewController {
                     self.aumentou = true
                     
                 } else {
-                    self.myView.makeViewNormal(mainView: self.view, viewSize: CGSize(width: 50, height: 50), viewPosition: CGPoint(x: 50, y: 50), duration: 1)
+                    self.myView.makeViewNormal(viewSize: CGSize(width: 50, height: 50), viewPosition: CGPoint(x: 50, y: 50), duration: 1)
                     self.aumentou = false
                 }
             }
@@ -66,18 +66,33 @@ class FullScreenViewController: UIViewController {
 //Extension Code
 public extension UIView{
     
+    /**
+     Makes the desired UIView full screen.
+     
+     - Parameters:
+         - mainView: The main view of your application. Used to set the desired view to full screen mode.
+     
+         - duration: Animation duration in seconds.
+     */
     public func makeViewFullScreen(mainView: UIView, duration: Double){
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            print("aumenta view")
             self.frame.size = mainView.frame.size
             self.center = mainView.center
         }, completion: nil)
     }
     
-    public func makeViewNormal(mainView: UIView, viewSize: CGSize, viewPosition: CGPoint ,duration: Double){
+    /**
+     Makes the view go back to it normal size.
+     
+     - Parameters:
+         - viewSize: Normal size of the view that was full screen.
+         - viewPosition: Normal position of the view that was full screen.
+         - duration: Animation duration in seconds.
+     */
+    
+    public func makeViewNormal(viewSize: CGSize, viewPosition: CGPoint ,duration: Double){
         
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            print("aumenta view")
             self.frame.size = viewSize
             self.frame.origin = viewPosition
         }, completion: nil)
