@@ -10,18 +10,41 @@ import UIKit
 
 class PulseAnimationViewController: UIViewController {
 
+    @IBOutlet weak var labelTester: UILabel!
     @IBOutlet weak var playButton: UIButton!
     let circleLayer = CAShapeLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pulseAnimation(viewToAnimate: playButton, animationDuration: 0.8, repeatCount: HUGE, maxPulse: 0.8, maxOpacity: 0.8)
+        
+        pulseAnimation(viewToAnimate: labelTester, animationDuration: 0.8, repeatCount: HUGE, maxPulse: 0.8, maxOpacity: 0.8)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /**
+     Provides a pulsing effect to an UIView.
+     
+     - Parameters:
+         - viewToAnimate: Defines the UIView that will receive the pulsing animation.
+     
+         - animationDuration: Animation duration in seconds.
+     
+         - repeatCount: How many times the animation will run. You can set a infinity value.
+     
+         - maxPulse: Defines how much the view will pulse.
+     
+             **Goes from 0 to 1.**
+ 
+         - maxOpacity: Defines how much transparency the view will achieve.
+     
+             **Goes from 0 to 1.**
+     
+     */
     
     public func pulseAnimation(viewToAnimate: UIView, animationDuration: Double, repeatCount: Float, maxPulse: Double, maxOpacity: Double){
         //Pulse Animation
@@ -45,6 +68,8 @@ class PulseAnimationViewController: UIViewController {
     
     @IBAction func animate(_ sender: Any) {
         pulseAnimation(viewToAnimate: playButton, animationDuration: 0.8, repeatCount: HUGE, maxPulse: 0.8, maxOpacity: 0.8)
+        
+        pulseAnimation(viewToAnimate: labelTester, animationDuration: 0.8, repeatCount: HUGE, maxPulse: 0.8, maxOpacity: 0.8)
     }
     
     @IBAction func dismiss(_ sender: Any) {

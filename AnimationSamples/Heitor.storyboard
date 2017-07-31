@@ -84,6 +84,13 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="play-button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo6-hh-sYB">
+                                <rect key="frame" x="166" y="446" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -98,6 +105,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelTester" destination="Xo6-hh-sYB" id="jFH-m3-omj"/>
                         <outlet property="playButton" destination="Vw1-NS-g2M" id="AxT-sr-OeL"/>
                     </connections>
                 </viewController>
