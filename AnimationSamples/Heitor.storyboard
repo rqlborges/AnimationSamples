@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k1f-zV-q4d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k1f-zV-q4d">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,7 +56,7 @@
                         <viewControllerLayoutGuide type="top" id="7ub-u0-Zdh"/>
                         <viewControllerLayoutGuide type="bottom" id="2dd-UQ-s4N"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="7XS-Qf-8te">
+                    <view key="view" contentMode="scaleToFill" id="7XS-Qf-8te">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -121,7 +121,7 @@
                         <viewControllerLayoutGuide type="top" id="wYT-9Q-FNK"/>
                         <viewControllerLayoutGuide type="bottom" id="Vsn-Xy-4xq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="6t3-VF-A7Q">
+                    <view key="view" contentMode="scaleToFill" id="6t3-VF-A7Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -165,7 +165,7 @@
                         <viewControllerLayoutGuide type="top" id="C0W-dt-vPt"/>
                         <viewControllerLayoutGuide type="bottom" id="9vm-UL-iTb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="Tdd-1S-dTp">
+                    <view key="view" contentMode="scaleToFill" id="Tdd-1S-dTp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -209,7 +209,7 @@
                         <viewControllerLayoutGuide type="top" id="ox3-wy-tAJ"/>
                         <viewControllerLayoutGuide type="bottom" id="PgO-ds-MX3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="rZo-aj-g0O">
+                    <view key="view" contentMode="scaleToFill" id="rZo-aj-g0O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -218,7 +218,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Animate!"/>
                                 <connections>
-                                    <action selector="fourBallAnimation:" destination="LhY-fo-O4a" eventType="touchUpInside" id="qtf-FO-eO9"/>
+                                    <action selector="animation:" destination="LhY-fo-O4a" eventType="touchUpInside" id="xyH-WO-Tuu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhc-IS-20u">
@@ -226,7 +226,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Exit"/>
                                 <connections>
-                                    <action selector="dismiss:" destination="LhY-fo-O4a" eventType="touchUpInside" id="Xmc-VX-Cpc"/>
+                                    <action selector="dismiss:" destination="LhY-fo-O4a" eventType="touchUpInside" id="uKP-ga-JGC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -253,7 +253,7 @@
                         <viewControllerLayoutGuide type="top" id="wAF-Xe-RAz"/>
                         <viewControllerLayoutGuide type="bottom" id="hI1-rH-Sdl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="qhC-Y0-UlF">
+                    <view key="view" contentMode="scaleToFill" id="qhC-Y0-UlF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

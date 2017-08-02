@@ -27,7 +27,7 @@ class SideBarButtonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideBarButton(viewToDraw: self.view, center: self.view.center, lineColor: UIColor.black, lineLength: 50, lineThickness: 3)
+        sideBarButton(viewToDraw: self.view, center: self.view.center, lineColor: UIColor.black, lineLength: 30, lineThickness: 2)
     }
     
     override func didReceiveMemoryWarning() {

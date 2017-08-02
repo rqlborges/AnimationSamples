@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FourBalls: UIView {
+class FourBallsViewController: UIViewController {
     
     //Circles
     var mainCircle = UIView()
@@ -25,6 +25,14 @@ class FourBalls: UIView {
     var fourBallsPositionY: CGFloat?
     
     var calledDrawFourBalls = false
+    
+    override func viewDidLoad() {
+        drawFourBalls(mainView: self.view, circleSize: 50, fourBallsCenter: self.view.center, mainBallColor: UIColor.black, topBallColor: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), rightBallColor: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), bottomBallColor: #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), leftBallColor: #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1))
+    }
+    
+    override func didReceiveMemoryWarning() {
+        
+    }
     
     /**
      Draw all the balls.
@@ -143,6 +151,14 @@ class FourBalls: UIView {
             })
             
         }
+    }
+    
+    @IBAction func animation(_ sender: Any) {
+        fourBallsAnimation(animationDuration: 0.2)
+    }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
