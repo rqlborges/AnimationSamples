@@ -80,8 +80,8 @@
 			children = (
 				609940291F1A99710044D089 /* AppDelegate.swift */,
 				6099402D1F1A99710044D089 /* Main.storyboard */,
-				609940471F1A9A4F0044D089 /* Heitor Files */,
-				609940461F1A9A230044D089 /* Erick Files */,
+				609940471F1A9A4F0044D089 /* Classes */,
+				609940461F1A9A230044D089 /* UIViewExrtensions */,
 				609940331F1A99710044D089 /* Assets.xcassets */,
 				609940351F1A99710044D089 /* LaunchScreen.storyboard */,
 				609940381F1A99710044D089 /* Info.plist */,
@@ -90,7 +90,7 @@
 			path = AnimationSamples;
 			sourceTree = "<group>";
 		};
-		609940461F1A9A230044D089 /* Erick Files */ = {
+		609940461F1A9A230044D089 /* UIViewExrtensions */ = {
 			isa = PBXGroup;
 			children = (
 				6099403E1F1A99970044D089 /* Erick.storyboard */,
@@ -99,10 +99,10 @@
 				60555DD71F1E8BFC001BC6C7 /* MusicPlayerUIKit.swift */,
 				60555DDB1F1E8E5A001BC6C7 /* MusicPlayerFramework.swift */,
 			);
-			name = "Erick Files";
+			name = UIViewExrtensions;
 			sourceTree = "<group>";
 		};
-		609940471F1A9A4F0044D089 /* Heitor Files */ = {
+		609940471F1A9A4F0044D089 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				609940401F1A999C0044D089 /* Heitor.storyboard */,
@@ -113,7 +113,7 @@
 				756EC9661F20416B004154F8 /* FourBallsViewController.swift */,
 				750010821F268B5A00A1BDFB /* FullScreenViewController.swift */,
 			);
-			name = "Heitor Files";
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,7 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7SE9929Z59;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
 				INFOPLIST_FILE = AnimationSamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.AnimationSamples;
@@ -347,7 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7SE9929Z59;
+				DEVELOPMENT_TEAM = HJ3JBWEJT5;
 				INFOPLIST_FILE = AnimationSamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mackmobile.AnimationSamples;
